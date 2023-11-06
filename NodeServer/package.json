@@ -1,0 +1,25 @@
+{
+  "name": "zzemal_docker_node",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start" : "node index.js",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "docker" : "docker build --tag=nodeServer ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jh8057/zzemal_docker.git"
+  },
+  "author": "zzemal",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jh8057/zzemal_docker/issues"
+  },
+  "homepage": "https://github.com/jh8057/zzemal_docker#readme",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.18.2"
+  }
+}
