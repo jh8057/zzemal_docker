@@ -22,3 +22,19 @@ services:
       - "3001:3001"
     volumes:
       - ./NodeServer:/app
+
+  mysql:
+    build:
+      context: ./Mysql
+      dockerfile: Dockerfile
+    image: mysql
+    container_name: mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: mydb
+      MYSQL_USER: myuser
+      MYSQL_PASSWORD: mypassword
+    ports:
+      - "3306:3306"
+    volumes:
+      - ./Mysql:/app
