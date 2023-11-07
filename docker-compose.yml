@@ -16,8 +16,8 @@ services:
     build:
       context: ./NodeServer
       dockerfile: Dockerfile
-    image: node
-    container_name: node
+    image: node1
+    container_name: node1
     ports:
       - "3001:3001"
     volumes:

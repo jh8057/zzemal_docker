@@ -1,5 +1,5 @@
 <template>
-  <h1>Hello World</h1>
+  <h1>Spell check</h1>
 </template>
 
 <script>
