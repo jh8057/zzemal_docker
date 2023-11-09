@@ -9,10 +9,12 @@
     "build-only": "vite build",
     "type-check": "vue-tsc --noEmit -p tsconfig.app.json --composite false",
     "lint": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs,.ts,.tsx,.cts,.mts --fix --ignore-path .gitignore",
-    "format": "prettier --write src/"
+    "format": "prettier --write src/",
+    "scss" : "sass --watch --no-source-map ./src/assets/scss:./src/assets"
   },
   "dependencies": {
     "pinia": "^2.1.7",
+    "sass": "^1.69.5",
     "vue": "^3.3.4",
     "vue-router": "^4.2.5"
   },
