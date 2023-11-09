@@ -4,13 +4,12 @@ import { RouterLink, RouterView } from 'vue-router'
 
 <template>
   <header>
-    <img alt="Vue logo" class="logo" src="@/assets/logo.svg" width="125" height="125" />
-
+    <h1>양재 최고 핫플레이스</h1>
     <div class="wrapper">
       <nav>
-        <RouterLink to="/">Home</RouterLink>
-        <RouterLink to="/about">About</RouterLink>
-        <RouterLink to="/spell">Spell</RouterLink>
+        <RouterLink to="/">소개</RouterLink>
+        <RouterLink to="/menu">메뉴</RouterLink>
+        <RouterLink to="/enjoy">놀거리</RouterLink>
       </nav>
     </div>
   </header>
@@ -22,6 +21,12 @@ import { RouterLink, RouterView } from 'vue-router'
 header {
   line-height: 1.5;
   max-height: 100vh;
+}
+
+header h1 {
+  color: #000;
+  font-weight: bolder;
+  text-align: center;
 }
 
 .logo {
