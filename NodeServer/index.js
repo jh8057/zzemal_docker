@@ -8,10 +8,12 @@ const cors = require("cors");
 const whitelist = [
   "http://localhost:3000",
   "http://localhost:3001, http://localhost:3002",
+  ,
+  "http://localhost:5173",
 ];
 
 const corsOptions = {
-  origin: "http://localhost:3001",
+  origin: whitelist,
   optionsSuccessStatus: 200, // some legacy browsers (IE11, various SmartTVs) choke on 204
 };
 

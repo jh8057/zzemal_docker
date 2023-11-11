@@ -1,8 +1,8 @@
 const express = require("express");
 const router = express.Router();
 
-const basic = require("./basic");
-router.use("/basic", basic);
+const menu = require("./menu");
+router.use("/menu", menu);
 
 const wife = require("./wife");
 router.use("/wife", wife);
