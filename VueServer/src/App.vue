@@ -39,6 +39,7 @@ nav {
   font-size: 12px;
   text-align: center;
   margin-top: 2rem;
+  margin-bottom: 2rem;
 }
 
 nav a.router-link-exact-active {
@@ -59,7 +60,8 @@ nav a:first-of-type {
   border: 0;
 }
 
-@media (min-width: 1024px) {
+/** 큰화면에서 화면 전환*/
+/* @media (min-width: 1024px) {
   header {
     display: flex;
     place-items: center;
@@ -84,5 +86,5 @@ nav a:first-of-type {
     padding: 1rem 0;
     margin-top: 1rem;
   }
-}
+} */
 </style>
