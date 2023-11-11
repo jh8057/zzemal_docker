@@ -1,8 +1,10 @@
 <template>
   <div class="card" :id="title" @click="toggle">
     <div class="container">
-      <img :src="imgSrc" />
-      <div class="text__Container">
+      <div class="container__left">
+        <img :src="imgSrc" />
+      </div>
+      <div class="container__right">
         <h2 class="text">
           <b>{{ title }}</b>
         </h2>
@@ -62,13 +64,22 @@ const toggle = () => {
   flex-direction: row;
 }
 
-.container img {
+.container__left {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-grow: 1;
+}
+
+.container__left img {
   width: 100%;
   height: 100%;
   border-radius: 5px;
   object-fit: cover;
 }
-.text__Container {
+.container__right {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -81,6 +92,7 @@ const toggle = () => {
   font-weight: bold;
   text-align: center;
   transition: 0.3s;
+  flex-grow: 1;
 }
 
 .text {
