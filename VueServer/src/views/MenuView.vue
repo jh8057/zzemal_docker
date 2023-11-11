@@ -2,20 +2,24 @@
   <div class="about">
     <h1>메뉴</h1>
     <div class="menuList">
-      <card-slot title="test" :content="firstContent"></card-slot>
-      <card-slot title="test" content="test1"></card-slot>
-      <card-slot title="test" content="test1"></card-slot>
-      <card-slot title="test" content="test1"></card-slot>
-      <card-slot title="test" content="test1"></card-slot>
+      <card-slot
+        v-for="menu in store.menuList"
+        :key="menu.title"
+        :title="menu.title"
+        :content="menu.content"
+        :imgSrc="menu.imgSrc"
+      ></card-slot>
+      <card-slot-add></card-slot-add>
     </div>
   </div>
 </template>
 
 <script setup lang="ts">
 import CardSlot from '@/components/CardSlot.vue'
+import CardSlotAdd from '@/components/CardSlotAdd.vue'
+import { useMenuStore } from '@/stores/menu'
 
-const firstContent =
-  'test1test1test1test1test1test1test1test1test1test1test1test1test1test1test1test1test1test1test1test1test1test1test1test1test1test1test1test1test1test1'
+const store = useMenuStore()
 </script>
 <style>
 .about {

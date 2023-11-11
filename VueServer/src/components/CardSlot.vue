@@ -1,7 +1,7 @@
 <template>
   <div class="card" :id="title" @click="toggle">
     <div class="container">
-      <img src="../img/test1.jpg" />
+      <img :src="imgSrc" />
       <div class="text__Container">
         <h2 class="text">
           <b>{{ title }}</b>
@@ -13,9 +13,16 @@
 </template>
 
 <script setup lang="ts">
+import { computed } from 'vue'
+
 const props = defineProps({
   title: String,
-  content: String
+  content: String,
+  imgSrc: String
+})
+
+const imgSrc = computed(() => {
+  return 'src/img/' + props.imgSrc
 })
 
 const toggle = () => {
