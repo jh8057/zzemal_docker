@@ -10,8 +10,6 @@
         :imgSrc="menu.imgSrc"
       ></card-slot>
       <card-slot-add />
-
-      <button @click="test">메뉴 추가</button>
     </div>
   </div>
 </template>

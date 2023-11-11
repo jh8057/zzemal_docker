@@ -2,12 +2,12 @@
   <div class="card" :id="title" @click="toggle">
     <div class="container">
       <div class="container__left">
-        <img :src="imgSrc" />
+        <img :src="imgSrc" class="container__left--img" :id="title + 'img'" />
       </div>
       <div class="container__right">
-        <h2 class="text">
+        <h3 class="text">
           <b>{{ title }}</b>
-        </h2>
+        </h3>
         <p class="text">{{ content }}</p>
       </div>
     </div>
@@ -31,6 +31,11 @@ const toggle = () => {
   const container = document.getElementById(props.title)
   if (container) {
     container.classList.toggle('container--active')
+  }
+
+  const img = document.getElementById(props.title + 'img')
+  if (img) {
+    img.classList.toggle('container--active__img')
   }
 }
 </script>
@@ -63,6 +68,9 @@ const toggle = () => {
   display: flex;
   flex-direction: row;
 }
+.container--active {
+  height: 400px;
+}
 
 .container__left {
   width: 100%;
@@ -73,7 +81,7 @@ const toggle = () => {
   flex-grow: 1;
 }
 
-.container__left img {
+.container__left--img {
   width: 100%;
   height: 100%;
   border-radius: 5px;
@@ -100,15 +108,33 @@ const toggle = () => {
   word-break: break-all;
   text-overflow: ellipsis;
   overflow: hidden;
+  padding-bottom: 15px;
 }
 
-.container--active {
-  height: 400px;
-  width: 80%;
-  margin: 20px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+@media screen and (max-width: 600px) {
+  .card {
+    height: 250px;
+  }
+
+  .container {
+    flex-direction: column;
+  }
+
+  .container--active {
+    height: 800px;
+  }
+
+  .text {
+    position: relative;
+    overflow: hidden;
+    line-height: 25px;
+  }
+
+  .container__left--img {
+    height: 150px;
+  }
+  .container--active__img {
+    height: 400px;
+  }
 }
 </style>
