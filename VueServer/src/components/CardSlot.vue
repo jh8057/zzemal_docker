@@ -24,7 +24,7 @@ const props = defineProps({
 })
 
 const imgSrc = computed(() => {
-  return 'src/img/' + props.imgSrc
+  return 'src/img' + props.imgSrc
 })
 
 const toggle = () => {

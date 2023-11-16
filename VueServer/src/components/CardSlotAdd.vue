@@ -7,15 +7,7 @@
           class="addContent"
           v-model="content"
         />
-        <button
-          @click="
-            store.addMenu({
-              title: title,
-              content: content,
-              imgSrc: imgSrc
-            })
-          "
-        >
+        <button @click="submitToServer">
           <b>추가</b>
         </button>
       </div>
@@ -26,8 +18,11 @@
 <script setup lang="ts">
 import { computed } from 'vue'
 import { useMenuStore } from '@/stores/menu'
+import axios from 'axios'
 
 const store = useMenuStore()
+
+const totalLength = computed(() => store.menuList.length)
 
 let title = ''
 let content = ''
@@ -43,8 +38,30 @@ const uploadImage = (event: any) => {
     document.querySelector('.container__add').appendChild(img)
   }
 
-  imgSrc = event.target.files[0].name
+  imgSrc = event.target.files[0]
   reader.readAsDataURL(event.target.files[0])
+}
+
+const submitToServer = async () => {
+  const formData = new FormData()
+  formData.append('image', imgSrc)
+
+  let result = await axios
+    .post('http://localhost:3001/api/menu/upload', formData, {
+      headers: {
+        'Content-Type': 'multipart/form-data'
+      },
+      params: {
+        title: title,
+        content: content
+      }
+    })
+    .then((res) => {
+      console.log(res)
+    })
+    .catch((err) => console.log(err))
+
+  console.log('result', result)
 }
 </script>
 

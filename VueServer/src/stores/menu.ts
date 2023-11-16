@@ -3,6 +3,7 @@ import { defineStore } from 'pinia'
 
 export const useMenuStore = defineStore('menu', () => {
   const menuList = ref([])
+  const ImageList = ref([])
 
   async function getMenuList() {
     const menu = await fetch('http://localhost:3001/api/menu')
@@ -17,8 +18,20 @@ export const useMenuStore = defineStore('menu', () => {
 
     console.log('menu', menu)
     menuList.value = menu.menuList
+  }
 
-    return menuList
+  async function getImage() {
+    // const images = await fetch('http://localhost:3001/images')
+    //   .then((res) => res.json())
+    //   .then((res) => {
+    //     return res
+    //   })
+    //   .catch((err) => {
+    //     console.log('err', err)
+    //     return { err: 'err' }
+    //   })
+    // console.log('images', images)
+    // ImageList.value = images
   }
 
   function addMenu(menu: any) {
@@ -29,5 +42,5 @@ export const useMenuStore = defineStore('menu', () => {
     // menuList.value.splice(index, 1)
   }
 
-  return { menuList, getMenuList, addMenu, deleteMenu }
+  return { menuList, getMenuList, getImage }
 })
