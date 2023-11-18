@@ -45,15 +45,14 @@ const uploadImage = (event: any) => {
 const submitToServer = async () => {
   const formData = new FormData()
   formData.append('image', imgSrc)
+  formData.append('title', title)
+  formData.append('content', content)
+  formData.append('imgSrc', imgSrc.name)
 
   let result = await axios
     .post('http://localhost:3001/api/menu/upload', formData, {
       headers: {
         'Content-Type': 'multipart/form-data'
-      },
-      params: {
-        title: title,
-        content: content
       }
     })
     .then((res) => {

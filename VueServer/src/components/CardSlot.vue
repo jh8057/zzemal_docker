@@ -2,7 +2,11 @@
   <div class="card" :id="title" @click="toggle">
     <div class="container">
       <div class="container__left">
-        <img :src="imgSrc" class="container__left--img" :id="title + 'img'" />
+        <img
+          :src="`http://localhost:3001/images/${imgSrc}`"
+          class="container__left--img"
+          :id="title + 'img'"
+        />
       </div>
       <div class="container__right">
         <h3 class="text">
@@ -24,7 +28,7 @@ const props = defineProps({
 })
 
 const imgSrc = computed(() => {
-  return 'src/img' + props.imgSrc
+  return props.imgSrc
 })
 
 const toggle = () => {

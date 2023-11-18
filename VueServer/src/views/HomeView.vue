@@ -32,6 +32,10 @@ import HelloWorld from '../components/HelloWorld.vue'
     <section>
       <h2>최고의 즐길거리</h2>
       <p>이곳은 즐길거리가 상당하답니다..?!</p>
+      <ul>
+        <li>집주인이 직접 갈아주는 핸드드립</li>
+        <li>보드게임 : 우봉고!</li>
+      </ul>
     </section>
   </main>
 </template>

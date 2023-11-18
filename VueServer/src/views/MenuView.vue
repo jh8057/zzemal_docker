@@ -3,7 +3,7 @@
     <h1>메뉴</h1>
     <div class="menuList">
       <card-slot
-        v-for="menu in store.menuList"
+        v-for="menu in menuList"
         :key="menu.title"
         :title="menu.title"
         :content="menu.content"
@@ -17,10 +17,25 @@
 <script setup lang="ts">
 import CardSlot from '@/components/CardSlot.vue'
 import CardSlotAdd from '@/components/CardSlotAdd.vue'
-import { useMenuStore } from '@/stores/menu'
+// import { useMenuStore } from '@/stores/menu'
+import { ref } from 'vue'
 
-const store = useMenuStore()
-store.getMenuList()
+let menuList: any = ref([])
+const getMenuList = async () => {
+  const menu = await fetch('http://localhost:3001/api/menu')
+    .then((res) => res.json())
+    .then((res) => {
+      return res
+    })
+    .catch((err) => {
+      console.log('err', err)
+      return { err: 'err' }
+    })
+
+  console.log('menu', menu)
+  menuList.value = menu
+}
+getMenuList()
 </script>
 <style>
 .about {
