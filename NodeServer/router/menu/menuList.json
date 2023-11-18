@@ -1,13 +1,8 @@
 {
     "menuList" : [{
-        "title" : "The Lord of the Rings",
-        "content" : "testestsetsetsettestestsetsetsettestestsetsetsettestestsetsetsettestestsetsetsettestestsetsetsettestestsetsetsettestestsetsetsettestestsetsetsettestestsetsetsettestestsetsetsettestestsetsetsettestestsetsetsettestestsetsetsettestestsetsetsettestestsetsetsettestestsetsetsettestestsetsetsettestestsetsetsettestestsetsetsettestestsetsetsettestestsetsetsettestestsetsetsettestestsetsetsettestestsetsetsettestestsetsetsettestestsetsetsettestestsetsetsettestestsetsetsettestestsetsetsettestestsetsetsettestestsetsetsettestestsetsetset",
-        "imgSrc" : "/test1.jpg"
-    }
-    ,{
-        "title" : "The Lord of the Rings",
-        "content" : "testestsetsetsettestestsetsetsettestestsetsetsettestestsetsetsettestestsetsetsettestestsetsetsettestestsetsetsettestestsetsetsettestestsetsetsettestestsetsetsettestestsetsetsettestestsetsetsettestestsetsetsettestestsetsetsettestestsetsetsettestestsetsetsettestestsetsetsettestestsetsetsettestestsetsetsettestestsetsetsettestestsetsetsettestestsetsetsettestestsetsetsettestestsetsetsettestestsetsetsettestestsetsetsettestestsetsetsettestestsetsetsettestestsetsetsettestestsetsetsettestestsetsetsettestestsetsetsettestestsetsetset",
-        "imgSrc" : "/test1.jpg"
+        "title" : "환영합니다!",
+        "content" : "양재댁입니다!",
+        "imgSrc" : "/basic.jpg"
     }
     ]
 }
